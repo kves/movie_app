@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:movie_app/providers/movie_provider.dart';
+import 'package:provider/provider.dart';
 
 import 'pages/home_page.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(ChangeNotifierProvider<MovieProvider>(
+    child: const MyApp(),
+    create: (_) => MovieProvider(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
